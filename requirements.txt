@@ -1,0 +1,7 @@
+rasa==1.7.3
+rasa_nlu
+discord==1.0.1
+discord-webhook
+python-dotenv
+feedparser==5.2.1
+lxml==4.5.0
