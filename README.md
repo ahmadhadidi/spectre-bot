@@ -1,3 +1,6 @@
+# spectre-bot
+A discord bot for Valorant
+
 ## Prerequisites
 
 * Python 3.7.5
