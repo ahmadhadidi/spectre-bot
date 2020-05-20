@@ -6,16 +6,16 @@ from common import message_splitter
 
 # This function replies with the corona virus statistics to the discord user
 def corona(message):
-    # remove -corona from the message
+    # Remove -corona from the message
     country = message_splitter(message, True)
 
-    # obtain the api url
+    # Obtain the api url
     corona_url = os.getenv("corona_url")
 
-    # bind the corona logo URL
+    # Bind the corona logo URL
     corona_logo = "https://www.dresden.de/media/bilder/gesundheit/GA/Corona_CDC-AlissaEckert_23311.jpg"
 
-    # concatenate the country that the user requested with the api url
+    # Concatenate the country that the user requested with the api url
     corona_url = corona_url + country
 
     print('Corona URL is: {0}'.format(corona_url))
@@ -36,24 +36,24 @@ def corona(message):
     last_day = response[len(response) - 1]
     previous_day = response[len(response)-2]
 
-    # bind the data that we need into variables for the last day in the list
+    # Bind the data that we need into variables for the last day in the list
     last_day_date = last_day['Date'][:10]  # [:10] means get the first 10 chars
     last_day_confirmed = last_day['Confirmed']
     last_day_active = last_day['Active']
     last_day_deaths = last_day['Deaths']
 
-    # bind the data that we need into variables for the day before the last day in the list
+    # Bind the data that we need into variables for the day before the last day in the list
     previous_day_date = previous_day['Date'][:10]  # [:10] means get the first 10 chars
     previous_day_confirmed = previous_day['Confirmed']
     previous_day_active = previous_day['Active']
     previous_day_deaths = previous_day['Deaths']
 
-    # calculate the difference between each variable (except date)
+    # Calculate the difference between each variable (except date)
     diff_confirmed = last_day_confirmed - previous_day_confirmed
     diff_active = last_day_active - previous_day_active
     diff_deaths = last_day_deaths - previous_day_deaths
 
-    # prepare the string that goes into the value of each field to show the value and the difference
+    # Prepare the string that goes into the value of each field to show the value and the difference
     val_last_day_confirmed = "{0} ({1})".format(last_day_confirmed, diff_confirmed)
     val_last_day_active = "{0} ({1})".format(last_day_active, diff_active)
     val_last_day_death = "{0} ({1})".format(last_day_deaths, diff_deaths)
@@ -74,6 +74,9 @@ def corona(message):
 
     embed_corona.set_footer(text="Data from CovidAPI")
 
+    # Journal: An attempt to scrape the moh.gov.jo corona website
+    #          It is really unfriendly to scrape, so I used the
+    #          CovidAPI instead.
     # extract the text attribute from the script element
     # variable_holder = script_holder[0].text
     # https://corona.moh.gov.jo/en

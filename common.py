@@ -1,4 +1,5 @@
 # This function removes the first word from a message
+# TODO: Handle the case when the string is only 1 word, not 2.
 def message_splitter(message, verbose):
 
     # Add a verbose flag to the variable
