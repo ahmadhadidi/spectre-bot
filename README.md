@@ -22,6 +22,7 @@ A Rasa enabled Discord chatbot based on the work of [DeeJangir](https://github.c
 * Visualizations
 * Data store for customized querying per user
 * Docker (if needed)
+* Better control of switching the bot on and off
 
 # 1 - Setup
 This section goes through the setup process, it is split into two sections, one to be done once (per linux install) and the other to be done everytime when the chatbot application is ran.
@@ -99,9 +100,10 @@ venv\Scripts\activate.bat # Windows
 ```
 
 ### 1.2.2 - Run Both Simultaneously (Recommended)
-After activating the virutal environment. (Refer to Enable The Virtual Environment Section)
+Deactivate the virtual environment and run the chatbot in a way to prevent it from switching off after closing the terminal window.
 ``` sh
-python rasa_folder/run_rasa.py & python main.py
+deactivate # deactivate the virtual environment
+nohup venv/bin/python3 main.py & venv/bin/python3 rasa_folder/run_rasa.py
 ```
 
 ### 1.2.3 - Run The Chatbot Without Rasa
