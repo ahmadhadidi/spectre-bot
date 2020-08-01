@@ -74,6 +74,7 @@ venv\Scripts\activate.bat # Windows
 ```
 
 ### 1.1.5 - Download Dependencies (After Activating the virtual environment)
+Please note that you might have to ***run this command twice***, there is an issue with the order of dependencies I guess.
 
 ``` sh
 pip install -r requirements.txt
