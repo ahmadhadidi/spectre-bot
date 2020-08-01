@@ -51,6 +51,11 @@ sudo apt install python3.7-venv
 sudo pip install virtualenv 
 ```
 
+#### 1.1.2.5 - If Git is not installed, install it
+``` sh
+sudo apt install git
+```
+
 ### 1.1.3 - Clone This Repository and Access it
 ``` sh
 git clone https://github.com/ahmadhadidi/spectre-bot.git
