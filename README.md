@@ -34,6 +34,7 @@ that you have a new Linux install on your server or Raspberry Pi.
 Note: As of Ubuntu 20.04 LTSC, the default `python3` version is 3.8, therefore, you have to change the 5th
 line to `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1`.
 ``` sh
+sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
 sudo apt-get install python3.7
