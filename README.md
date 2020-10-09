@@ -128,3 +128,12 @@ After activating the virutal environment. (Refer to Enable The Virtual Environme
 python rasa_folder/run_rasa.py
 ```
 
+### 2.0 Run with Docker
+
+#### 2.1 Fix the .env file
+Create a .env file in the project directory and add your bots **token** key. Same applies for the weather api.
+
+#### 2.2 Create a Docker Image
+docker build -t muka/muka:1.0 .
+
+docker run -p 5005:5005 <hash of image>
