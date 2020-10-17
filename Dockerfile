@@ -1,4 +1,4 @@
-FROM python:3.7-slim as base
+FROM python:3.7.5-stretch as base
 
 WORKDIR /app
 
